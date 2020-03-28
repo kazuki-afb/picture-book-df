@@ -3,6 +3,13 @@
     .item 
       %h1.item__name ゴムゴムの実
       %p.item__type (パラミシア)
+      .btn
+        .write
+          %a.write__btn
+            Write
+        .edit
+          = link_to edit_user_path(current_user) do
+            Edit
   .comments
     .title
       能力の特徴
@@ -23,6 +30,3 @@
         ゴムゴムのピストル
       %li.skll__nsme
         ゴムゴムのバズーカ
-    .edit
-      %a.edit__btn
-        Edit
