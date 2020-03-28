@@ -17,8 +17,12 @@ ActiveRecord::Schema.define(version: 20200327094235) do
     t.text     "ability",    limit: 65535
     t.string   "consumer"
     t.text     "skill",      limit: 65535
+    t.integer  "user_id"
+    t.integer  "item_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.index ["item_id"], name: "index_comments_on_item_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -43,4 +47,6 @@ ActiveRecord::Schema.define(version: 20200327094235) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "comments", "items"
+  add_foreign_key "comments", "users"
 end

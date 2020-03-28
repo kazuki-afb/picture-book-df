@@ -5,7 +5,8 @@ class CreateComments < ActiveRecord::Migration[5.0]
       t.text :ability
       t.string :consumer
       t.text :skill
-
+      t.references :user, foreign_key: true
+      t.references :item, foreign_key: true
       t.timestamps
     end
   end
