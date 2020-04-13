@@ -6,8 +6,7 @@
   私自身がワンピースが好きなので、ワンピース内に出てくる悪魔の実図鑑を作成してみたかった。
 
 # イメージ
-https://user-images.githubusercontent.com/61180330/79119692-f2967080-7dcb-11ea-85c8-5bb09f7e5cfb.png
-
+![image](https://user-images.githubusercontent.com/61180330/79121363-1b206980-7dd0-11ea-9754-e42f14eb1b55.png)
 
 # picture-book-df DB設計
 ## usersテーブル
