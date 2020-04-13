@@ -1,0 +1,14 @@
+.wrapper
+  .form
+    = form_with model: @item, class: 'form--box' do |f|
+      .form--name
+        = f.label :実の名前
+        = f.text_field :name, placeholder: "例) ゴムゴム", class: 'form--name', size: 32
+        = f.label :の実
+      .form--ability_type
+        = f.label :タイプ選択
+        = f.select :ability_type_id, [["タイプを選択してください", 0],["パラミシア", 1],["ゾオン", 2],["ロギア", 3]]
+      .form--ability_person
+        = f.label :能力者名
+        = f.text_field :ability_person, placeholder: "能力者名を入力してください", class:'form--ability_person', size: 32
+      = f.submit '登録', class: 'form--btn'
