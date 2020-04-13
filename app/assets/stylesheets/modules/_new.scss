@@ -1,0 +1,27 @@
+  .form {
+    height: 100%;
+    width: 100%;
+    background-color: aliceblue;
+    &--box {
+      width: 34%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    &--name {
+      height: 32px;
+      margin-top: 24px;
+    }
+    &--ability_type {
+      height: 32px;
+      margin-top: 72px;
+    }
+    &--ability_person {
+      height: 32px;
+      margin-top: 24px;
+    }
+    &--btn {
+      height: 50px;
+      width: 72px;
+      margin-top: 72px;
+    }
+  }
