@@ -19,6 +19,9 @@
         height: calc(100% - 150px);
         width: 100%;
         background-color: lightgray;
+        // background-image: url(1000103397_3.jpg);
+        // background-repeat: no-repeat;
+        // background-size: cover;
         position: relative;
       }
       &__select {
@@ -48,6 +51,8 @@
         height: 150px;
         width: 100%;
         background-color: lightslategray;
+        // background-image: url(1000103397_3.jpg);
+        // background-size: 150px;
       }
     }
   }
