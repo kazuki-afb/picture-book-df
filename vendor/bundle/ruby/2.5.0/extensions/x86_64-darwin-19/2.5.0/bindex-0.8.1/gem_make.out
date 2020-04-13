@@ -1,0 +1,15 @@
+current directory: /Users/horiekazuyuki/projects/picture-book-df/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/horiekazuyuki/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200330-21985-1tmdffi.rb extconf.rb
+creating Makefile
+
+current directory: /Users/horiekazuyuki/projects/picture-book-df/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/horiekazuyuki/projects/picture-book-df/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/horiekazuyuki/projects/picture-book-df/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20200330-21985-1fmouw5/skiptrace/internal
