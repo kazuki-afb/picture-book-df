@@ -1,12 +1,21 @@
 .right_content
   .header
     .item 
-      %h1.item__name ゴムゴムの実
-      %p.item__type (パラミシア)
+      %h1.item__name 
+        = @item.name
+        %span<>
+        の実
+      %p.item__type
+        (
+        %span<>
+        = @item.ability_type.name
+        %span<>
+        )
       .btn
         .write
-          %a.write__btn
-            Write
+          .write__btn
+            = link_to new_item_comment_path(:item_id) do
+              Write
         .edit
           = link_to edit_user_path(current_user) do
             Edit
