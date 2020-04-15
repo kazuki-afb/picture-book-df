@@ -1,0 +1,15 @@
+.wrapper
+  .form
+    -# routes.rbでネストしているのでmodel:は
+    -# @itemと@comment2つ使う
+    = form_with model: [@item, @comment], url: item_comments_path, class: 'form--box' do |f|
+      .form--name
+        = f.label :能力の特徴
+        = f.text_field :ability, placeholder: "250字以内", class: 'form--name', size: 32, maxlength:"250"
+      .form--ability_type
+        = f.label :能力者名
+        = f.text_field :consumer, placeholder: "例) モンキー・D・ルフィー", class: 'form--name', size: 32, maxlength:"30"
+      .form--ability_person
+        = f.label :必殺技
+        = f.text_field :skill, placeholder: "例) ゴムゴムのピストル", class: 'form--name', size: 32, maxlength:"30"
+      = f.submit '登録', class: 'form--btn'

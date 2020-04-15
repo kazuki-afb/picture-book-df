@@ -9,15 +9,20 @@ class ItemsController < ApplicationController
 
   def create
     # new.html.hamlで入力した情報を保存、保存したitemビューへ、保存できなかったら戻る
-    if Item.create(item_params)
-      redirect_to root_path
+    @item = Item.new(item_params)
+    if @item.save
+      session[:id] = @item.id
+      redirect_to item_path(session[:id])
     else
       render :new
     end
   end
 
   def show
+    # 表示しているitemのidと同じ
+    # item_idカラムのcommentを表示
     @item = Item.find(params[:id])
+    @comments = @item.comments.includes(:item)
   end
 
   private

@@ -14,7 +14,7 @@
       .btn
         .write
           .write__btn
-            = link_to new_item_comment_path(:item_id) do
+            = link_to new_item_comment_path(params[:id]) do
               Write
         .edit
           = link_to edit_user_path(current_user) do
@@ -22,20 +22,20 @@
   .comments
     .title
       能力の特徴
-    %ul.ability{style: "list-style: disc; padding-left: 30px;"}
-      %li.ability__unique 
-        身体がゴムのように伸縮する。
-      %li.ability__unique 
-        打撃が効かない。
+    %ul.ability{style: "padding-left: 30px;"}
+      %li.ability__unique
+        - @comments.each do |c| 
+          = c.ability
+          %br
     .title
       能力使用者
-    %ul.consumer{style: "list-style: disc; padding-left: 30px;"}
+    %ul.consumer{style: "padding-left: 30px;"}
       %li.consumer__name
-        モンキー D ルフィー
+        - @comments.each do |c| 
+          = c.consumer  
     .title
       必殺技
-    %ul.skill{style: "list-style: disc; padding-left: 30px;"}
+    %ul.skill{style: "padding-left: 30px;"}
       %li.skill__name
-        ゴムゴムのピストル
-      %li.skll__nsme
-        ゴムゴムのバズーカ
+        - @comments.each do |c| 
+          = c.skill

@@ -3,7 +3,7 @@
     = form_with model: @item, class: 'form--box' do |f|
       .form--name
         = f.label :実の名前
-        = f.text_field :name, placeholder: "例) ゴムゴム", class: 'form--name', size: 32
+        = f.text_field :name, placeholder: "例) ゴムゴム", class: 'form--name', size: 32, maxlength:"10"
         = f.label :の実
       .form--ability_type
         = f.label :タイプ選択
