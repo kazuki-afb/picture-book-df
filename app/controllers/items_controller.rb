@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   def index
+    # @items = Item.find(params[:id])
+    # @comments = Comment.all
   end
 
   def new
@@ -22,6 +24,7 @@ class ItemsController < ApplicationController
     # 表示しているitemのidと同じ
     # item_idカラムのcommentを表示
     @item = Item.find(params[:id])
+    @comment = Comment.new
     @comments = @item.comments.includes(:item)
   end
 
