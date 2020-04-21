@@ -10,7 +10,7 @@
 
   .left_content {
     height: 100%;
-    width: 100%;
+    width: 50%;
     .image {
       height: 100%;
       width: 100%;
@@ -51,14 +51,21 @@
         height: 150px;
         width: 100%;
         background-color: lightslategray;
+        display: flex;
+        overflow-x: scroll;
         // background-image: url(1000103397_3.jpg);
         // background-size: 150px;
+        .box {
+          object-fit: scale-down;
+          flex: 0 0 150px;
+          min-width: 150px;
+        }
       }
     }
   }
   .right_content {
     height: 100%;
-    width: 100%;
+    width: 50%;
     border-left: solid 1px black;
     .header {
       height: 70px;
@@ -132,8 +139,20 @@
         }
       }
       .ability {
-        &__unique {
-          margin-top: 5px;
+        height: 30px;
+        width: 100%;
+        &__box {
+          display: flex;
+          &--unique {
+            margin-top: 5px;
+          }
+          .user_name {
+            margin-top: 9PX;
+            margin-left: 8px;
+            font-size: 12px;
+            color: darkgray;
+            right: 15px;
+          }
         }
       }
     }

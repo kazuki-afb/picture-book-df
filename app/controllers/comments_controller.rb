@@ -1,10 +1,10 @@
 class CommentsController < ApplicationController
+  before_action :set_item # アクション前にset_itemを呼び出す
+
   def new
-    # routes.rbでitemsにネストしているので
-    # どのitemに紐づいているのかを記述する
-    @item = Item.find(params[:item_id])
     # インスタンス生成
     @comment = Comment.new
+    
   end
 
   def create
@@ -27,5 +27,10 @@ class CommentsController < ApplicationController
     ).merge( # 外部キーをマージさせる
       user_id: current_user.id, item_id: params[:item_id]
     ) 
+  end
+
+  def set_item
+    # ネストしてあるのでitem_idを呼び出す必要がある
+    @item = Item.find(params[:item_id])
   end
 end

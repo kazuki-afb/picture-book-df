@@ -23,19 +23,42 @@
     .title
       能力の特徴
     %ul.ability{style: "padding-left: 30px;"}
-      %li.ability__unique
-        - @comments.each do |c| 
-          = c.ability
-          %br
+      - @comments.each do |c|
+        .ability__box
+          -if c.ability.blank?
+            %li.ability__box--unique
+              = c.ability
+          - else
+            %li.ability__box--unique
+              = c.ability
+            .user_name
+              writer:
+              = c.user.name
     .title
       能力使用者
-    %ul.consumer{style: "padding-left: 30px;"}
-      %li.consumer__name
-        - @comments.each do |c| 
-          = c.consumer  
+    %ul.ability{style: "padding-left: 30px;"}
+      - @comments.each do |c|
+        .ability__box
+          -if c.consumer.blank?
+            %li.ability__box--unique
+              = c.consumer
+          - else
+            %li.ability__box--unique
+              = c.consumer
+            .user_name
+              writer:
+              = c.user.name
     .title
       必殺技
-    %ul.skill{style: "padding-left: 30px;"}
-      %li.skill__name
-        - @comments.each do |c| 
-          = c.skill
+    %ul.ability{style: "padding-left: 30px;"}
+      - @comments.each do |c|
+        .ability__box
+          -if c.skill.blank?
+            %li.ability__box--unique
+              = c.skill
+          - else
+            %li.ability__box--unique
+              = c.skill
+            .user_name
+              writer:
+              = c.user.name
