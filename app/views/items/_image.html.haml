@@ -1,13 +1,23 @@
 .left_content
   .image
     .image__main
-      = form_with(model: [@item, @comment], local: true, class: 'image__select') do |f|
-        = f.label :image, class: "image__select--icon" do
-          = icon('fas', 'image')
-          = f.file_field :image, class: "hidden"
-        = f.submit 'send', class: "image__select--btn"
-    %ul.image__array
+      -# .image__arrayで選んだ画像が表示される
+      %ul.img
+        -@comments.each do |c|
+          -if c.image.blank?
+          - else
+            %li.img.big
+              =image_tag "#{c.image}", class: 'bigbox'
+
+    = form_with(model: [@item, @comment], local: true, class: 'image__select') do |f|
+      = f.label :image, class: "image__select--icon" do
+        = icon('fas', 'image')
+        = f.file_field :image, class: "hidden"
+      = f.submit 'send', class: "image__select--btn"
+    .image__array
       -@comments.each do |c|
         -if c.image.blank?
         - else
-          =image_tag "#{c.image}", class: 'box'
+          %label.box(for="box")
+            =image_tag "#{c.image}"
+            %input.sub(type="submit")
