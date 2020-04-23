@@ -15,6 +15,7 @@
       height: 100%;
       width: 100%;
       background-color: gray;
+      position: relative;
       &__main {
         height: calc(100% - 150px);
         width: 100%;
@@ -22,7 +23,28 @@
         // background-image: url(1000103397_3.jpg);
         // background-repeat: no-repeat;
         // background-size: cover;
-        position: relative;
+        position: absolute;
+        .img {
+          height: 100%;
+          width: 100%;
+          .img.big.active{
+          height: 100%;
+          width: 100%;
+          display: block;
+          position: relative;
+            .bigbox {
+              height: 98%;
+              width: 98%;
+              position: absolute;
+              top: 50%;
+              left: 5px;
+              transform: translateY(-50%)
+            }
+          }
+          .img.big {
+          display: none;
+         }
+        }
       }
       &__select {
         height: 70px;
@@ -30,6 +52,7 @@
         padding-left: 83%;
         display: flex;
         align-items: center;
+        position: absolute;
         &--icon {
           font-size: 24px;
           .hidden {
@@ -53,12 +76,17 @@
         background-color: lightslategray;
         display: flex;
         overflow-x: scroll;
+        position: absolute;
+        bottom: 0;
         // background-image: url(1000103397_3.jpg);
         // background-size: 150px;
         .box {
-          object-fit: scale-down;
+          object-fit: cover;
           flex: 0 0 150px;
           min-width: 150px;
+          .sub {
+            display: none;
+          }  
         }
       }
     }
