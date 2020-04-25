@@ -90,6 +90,123 @@
         }
       }
     }
+    .book {
+      height: calc(100% - 10px);
+      width: calc(100% - 10px);
+      margin: 5px;
+      &__side {
+        height: 100%;
+        width: 10px;
+        background-color: brown;
+        float: left;
+      }
+      &__index {
+        height: calc(100% - 10px);
+        width: calc(100% - 20px);
+        background-color: cornsilk;
+        float: left;
+        margin: 5px 0;
+        &--box_1 {
+          height: 10%;
+          width: 10%;
+          background-color: rgba(red, 0.6);
+          text-align: center;
+          line-height: 80px;
+          font-size: 32px;
+          color: red;
+        }
+        &--box_2 {
+          height: 10%;
+          width: 10%;
+          background-color: rgba(red, 0.6);
+          margin-left: 10%;
+          text-align: center;
+          line-height: 80px;
+          font-size: 32px;
+          color: red;
+        }
+        &--box_3 {
+          height: 10%;
+          width: 10%;
+          background-color: rgba(red, 0.6);
+          margin-left: 20%;
+          text-align: center;
+          line-height: 80px;
+          font-size: 32px;
+          color: red;
+        }
+        &--box_4 {
+          height: 10%;
+          width: 10%;
+          background-color: rgba(red, 0.6);
+          margin-left: 30%;
+          text-align: center;
+          line-height: 80px;
+          font-size: 32px;
+          color: red;
+        }
+        &--box_5 {
+          height: 10%;
+          width: 10%;
+          background-color: rgba(red, 0.6);
+          margin-left: 40%;
+          text-align: center;
+          line-height: 80px;
+          font-size: 32px;
+          color: red;
+        }
+        &--box_6 {
+          height: 10%;
+          width: 10%;
+          background-color: rgba(red, 0.6);
+          margin-left: 50%;
+          text-align: center;
+          line-height: 80px;
+          font-size: 32px;
+          color: red;
+        }
+        &--box_7 {
+          height: 10%;
+          width: 10%;
+          background-color: rgba(red, 0.6);
+          margin-left: 60%;
+          text-align: center;
+          line-height: 80px;
+          font-size: 32px;
+          color: red;
+        }
+        &--box_8 {
+          height: 10%;
+          width: 10%;
+          background-color: rgba(red, 0.6);
+          margin-left: 70%;
+          text-align: center;
+          line-height: 80px;
+          font-size: 32px;
+          color: red;
+        }
+        &--box_9 {
+          height: 10%;
+          width: 10%;
+          background-color: rgba(red, 0.6);
+          margin-left: 80%;
+          text-align: center;
+          line-height: 80px;
+          font-size: 32px;
+          color: red;
+        }
+        &--box_10 {
+          height: 10%;
+          width: 10%;
+          background-color: rgba(red, 0.6);
+          margin-left: 90%;
+          text-align: center;
+          line-height: 80px;
+          font-size: 32px;
+          color: red;
+        }
+      }
+    }
   }
   .right_content {
     height: 100%;
@@ -100,6 +217,12 @@
       width: 100%;
       padding-left: 20px;
       background-color: black;
+      &__title {
+      text-align: center;
+      line-height: 70px;
+      color: white;
+      font-size: 40px;
+      }
       .item {
         height: 70px;
         width: 100%;
@@ -181,6 +304,88 @@
             color: darkgray;
             right: 15px;
           }
+        }
+      }
+    }
+    .search_form {
+      height: 70px;
+      width: 100%;
+      margin-top: 80px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      &__input {
+        width: 45%;
+        margin-right: 10px;
+      }
+      &__btn {
+        display       : inline-block;
+        border-radius : 5%;          /* 角丸       */
+        text-align    : center;      /* 文字位置   */
+        cursor        : pointer;     /* カーソル   */
+        padding       : 12px 12px;   /* 余白       */
+        background    : #000066;     /* 背景色     */
+        color         : #ffffff;     /* 文字色     */
+        line-height   : 1em;         /* 1行の高さ  */
+        transition    : .3s;         /* なめらか変化 */
+        border        : 2px solid #000066;    /* 枠の指定 */
+      }
+    }
+    .new_item {
+      height: 70px;
+      width: 100%;
+      margin-top: 80px;
+      text-align: center;
+      line-height: 70px;
+      &__btn {
+        height: 100%;
+        width: 65%;
+        font-size: 32px;
+        margin: 0 auto;
+        background-color: aquamarine;
+        cursor: pointer;
+        transition: .3s;
+        border: 2px solid aquamarine;
+        border-radius: 5%;
+        &--link {
+          text-decoration: none;
+        }
+      }
+    }
+    .sigin {
+      height: 70px;
+      width: 100%;
+      margin-top: 80px;
+      text-align: center;
+      line-height: 70px;
+      display: flex;
+      justify-content: space-around;
+      &__in {
+        height: 100%;
+        width: 30%;
+        font-size: 32px;
+        margin-left: 15%;
+        background-color: aquamarine;
+        cursor: pointer;
+        transition: .3s;
+        border: 2px solid aquamarine;
+        border-radius: 5%;
+        &--link {
+          text-decoration: none;
+        }
+      }
+      &__up {
+        height: 100%;
+        width: 30%;
+        font-size: 32px;
+        margin-right: 15%;
+        background-color: aquamarine;
+        cursor: pointer;
+        transition: .3s;
+        border: 2px solid aquamarine;
+        border-radius: 5%;
+        &--link {
+          text-decoration: none;
         }
       }
     }
