@@ -1,0 +1,30 @@
+.wrapper
+  .left_content
+    .book
+      .book__side
+      .book__index
+        .book__index--box_1 あ
+        .book__index--box_2 か
+        .book__index--box_3 さ
+        .book__index--box_4 た
+        .book__index--box_5 な
+        .book__index--box_6 は
+        .book__index--box_7 ま
+        .book__index--box_8 や
+        .book__index--box_9 ら
+        .book__index--box_10 わ
+      .book__side
+  .right_content
+    .header
+      %h1.header__title PictureBook-df
+    =form_with(url: search_items_path, local: true, method: :get, class: 'search_form') do |f|
+      = f.text_field :keyword, placeholder: '実の名前を入力', class: 'search_form__input', size: '32'
+      = f.submit '検索', class: 'search_form__btn'
+    .new_item
+      .new_item__btn
+        %a.new_item__btn--link(href="new_item") 新種発見
+    .sigin
+      .sigin__in
+        %a.sigin__in--link(href="user_session") ログイン
+      .sigin__up
+        %a.sigin__up--link(href="new_user_registration") 新規登録
