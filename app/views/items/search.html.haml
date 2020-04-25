@@ -21,10 +21,17 @@
       = f.text_field :keyword, placeholder: '実の名前を入力', class: 'search_form__input', size: '32'
       = f.submit '検索', class: 'search_form__btn'
     .new_item
-      .new_item__btn
-        %a.new_item__btn--link(href="new_item") 新種発見
-    .sigin
-      .sigin__in
-        %a.sigin__in--link(href="user_session") ログイン
-      .sigin__up
-        %a.sigin__up--link(href="new_user_registration") 新規登録
+      -if user_signed_in?
+        .new_item__btn
+          %a.new_item__btn--link(href= new_item_path) 新種発見
+    .sign
+      -if user_signed_in?
+        .sign__in
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'sign__in--link'
+        .sign__up
+          %a.sign__up--link(href= "/users/#{current_user.id}/edit") 編集
+      -else
+        .sign__in
+          %a.sign__in--link(href= user_session_path) ログイン
+        .sign__up
+          %a.sign__up--link(href= new_user_registration_path) 新規登録

@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  
   def index
     # @items = Item.find(params[:id])
     # @comments = Comment.all

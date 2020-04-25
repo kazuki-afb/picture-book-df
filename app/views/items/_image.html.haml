@@ -8,12 +8,12 @@
           - else
             %li.img.big
               =image_tag "#{c.image}", class: 'bigbox'
-
-    = form_with(model: [@item, @comment], local: true, class: 'image__select') do |f|
-      = f.label :image, class: "image__select--icon" do
-        = icon('fas', 'image')
-        = f.file_field :image, class: "hidden"
-      = f.submit 'send', class: "image__select--btn"
+    -if user_signed_in?
+      = form_with(model: [@item, @comment], local: true, class: 'image__select') do |f|
+        = f.label :image, class: "image__select--icon" do
+          = icon('fas', 'image')
+          = f.file_field :image, class: "hidden"
+        = f.submit 'send', class: "image__select--btn"
     .image__array
       -@comments.each do |c|
         -if c.image.blank?

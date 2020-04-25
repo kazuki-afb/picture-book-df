@@ -11,14 +11,16 @@
         = @item.ability_type.name
         %span<>
         )
-      .btn
-        .write
-          .write__btn
-            = link_to new_item_comment_path(params[:id]) do
-              Write
-        .edit
-          = link_to edit_user_path(current_user) do
-            Edit
+      -if user_signed_in?
+        .btn
+          .write
+            .write__btn
+              = link_to new_item_comment_path(params[:id]) do
+                Write
+
+          .edit
+            = link_to edit_user_path(current_user) do
+              Edit
   .comments
     .title
       能力の特徴
