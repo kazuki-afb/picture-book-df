@@ -1,14 +1,19 @@
 .wrapper
   .form
-    = form_with model: @item, class: 'form--box' do |f|
-      .form--name
+    = form_with model: @item, class: 'form__box' do |f|
+      .form__box--name
         = f.label :実の名前
-        = f.text_field :name, placeholder: "例) ゴムゴム", class: 'form--name', size: 32, maxlength:"10"
+        = f.text_field :name, placeholder: "例) ゴムゴム", size: 32, maxlength:"10"
         = f.label :の実
-      .form--ability_type
+      .form__box--race
+        = f.label :モデル
+        %span<>
+        (ゾオン系のみ入力)
+        = f.text_field :race, placeholder: "例) 大仏", size: 32, maxlength:"20"
+      .form__box--ability_type
         = f.label :タイプ選択
         = f.select :ability_type_id, [["タイプを選択してください", 0],["パラミシア", 1],["ゾオン", 2],["ロギア", 3]]
-      .form--ability_person
+      .form__box--ability_person
         = f.label :能力者名
-        = f.text_field :ability_person, placeholder: "能力者名を入力してください", class:'form--ability_person', size: 32
-      = f.submit '登録', class: 'form--btn'
+        = f.text_field :ability_person, placeholder: "能力者名を入力してください", size: 32
+      = f.submit '登録', class: 'form__box--btn'

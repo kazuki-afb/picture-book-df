@@ -2,37 +2,51 @@
     height: 100%;
     width: 100%;
     background-color: aliceblue;
-    &--box {
+    &__box {
       width: 34%;
       margin: 0 auto;
       text-align: center;
-    }
-    &--name {
-      height: 32px;
-      margin-top: 24px;
-    }
-    &--ability_type {
-      height: 32px;
-      margin-top: 72px;
-    }
-    &--ability_person {
-      height: 32px;
-      margin-top: 24px;
-    }
-    &--titel {
-      height: 32px;
-      margin-top: 24px;
-    }
-    &--select_icon {
-      height: 32px;
-      margin-top: 24px;
-      // .hidden {
-      //   display: none;
-      // }
-    }
-    &--btn {
-      height: 50px;
-      width: 72px;
-      margin-top: 72px;
+      padding-top: 50px;
+      &--name {
+        height: 80px;
+      }
+      &--race {
+        height: 80px;
+      }
+      &--ability_type {
+        height: 80px;
+      }
+      &--ability_person {
+        height: 80px;
+      }
+      &--titel {
+        height: 80px;
+      }
+      &--select_icon {
+        height: 32px;
+        margin-top: 24px;
+        // .hidden {
+        //   display: none;
+        // }
+      }
+      &--btn {
+        display       : inline-block;
+        border-radius : 5%;          /* 角丸       */
+        font-size     : 12pt;        /* 文字サイズ */
+        text-align    : center;      /* 文字位置   */
+        cursor        : pointer;     /* カーソル   */
+        padding       : 12px 12px;   /* 余白       */
+        background    : #000066;     /* 背景色     */
+        color         : #ffffff;     /* 文字色     */
+        line-height   : 1em;         /* 1行の高さ  */
+        transition    : .3s;         /* なめらか変化 */
+        box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+        border        : 2px solid #000066;    /* 枠の指定 */  
+      }
+      &--btn:hover {
+        box-shadow    : none;        /* カーソル時の影消去 */
+        color         : #000066;     /* 背景色     */
+        background    : #ffffff;     /* 文字色     */
+      }
     }
   }

@@ -5,12 +5,18 @@
         = @item.name
         %span<>
         の実
+      - if @item.race.blank?
+      - else
+        %p.item__race
+          モデル：
+          %span<>
+          =@item.race
       %p.item__type
         (
         %span<>
         = @item.ability_type.name
         %span<>
-        )
+        系)
       -if user_signed_in?
         .btn
           .write
