@@ -2,17 +2,17 @@
   .form
     -# routes.rbでネストしているのでmodel:は
     -# @itemと@comment2つ使う
-    = form_with model: [@item, @comment], url: item_comments_path, class: 'form--box' do |f|
-      .form--name
+    = form_with model: [@item, @comment], url: item_comments_path, class: 'form__box' do |f|
+      .form__box--name
         = f.label :能力の特徴
-        = f.text_field :ability, placeholder: "250字以内", class: 'form--name', size: 32, maxlength:"250"
-      .form--ability_person
+        = f.text_field :ability, placeholder: "250字以内", size: 32, maxlength:"250"
+      .form__box--ability_person
         = f.label :能力者名
-        = f.text_field :consumer, placeholder: "例) モンキー・D・ルフィー", class: 'form--name', size: 32, maxlength:"30"
-      .form--ability_person
+        = f.text_field :consumer, placeholder: "例) モンキー・D・ルフィー", size: 32, maxlength:"30"
+      .form__box--ability_person
         = f.label :必殺技
-        = f.text_field :skill, placeholder: "例) ゴムゴムのピストル", class: 'form--name', size: 32, maxlength:"30"
-      %h3.form--titel
+        = f.text_field :skill, placeholder: "例) ゴムゴムのピストル", size: 32, maxlength:"30"
+      %h3.form__box--titel
         画像選択
       -# %p 最大10枚までアップロードできます
       -# #image-box-1
@@ -23,8 +23,8 @@
       -#       = i.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
       -#       %label{for: "img-file"}
       -#         %i.fas.fa-camera
-      .form--image
+      .form__box--image
         = f.label :image do
           = icon('fas', 'image')
           = f.file_field :image, class: "hidden"
-      = f.submit '登録', class: 'form--btn'
+      = f.submit '登録', class: 'form__box--btn'

@@ -22,7 +22,7 @@
           .sign__in
             = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'sign__in--link'
           .sign__up
-            %a.sign__up--link(href= "/users/#{current_user.id}/edit") 編集
+            %a.sign__up--link(href= "/users/#{current_user.id}/edit") マイページ
         -else
           .sign__in
             %a.sign__in--link(href= user_session_path) ログイン
