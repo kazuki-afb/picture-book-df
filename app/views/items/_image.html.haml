@@ -19,5 +19,5 @@
         -if c.image.blank?
         - else
           %label.box(for="box")
-            =image_tag "#{c.image}"
+            =image_tag "#{c.image}", class: 'box__image'
             %input.sub(type="submit")
