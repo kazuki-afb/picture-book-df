@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
-  
+  # before_action :move_to_index except: [:index, :show, :search]
   def index
-    # @items = Item.find(params[:id])
-    # @comments = Comment.all
+    @item = Item.where(params[:id]).order('name').page(params[:page]).per(1)
+    # @item = Item.find(params[:id])
+    @comments = @item.comments.includes(:item)
   end
 
   def new
@@ -29,10 +30,17 @@ class ItemsController < ApplicationController
     @comments = @item.comments.includes(:item)
   end
 
+  def search
+    @items = Item.search(params[:keyword])
+  end
+
   private
 
   def item_params
     params.require(:item).permit(:name, :ability_type_id, :ability_person, :race)
   end
 
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
 end

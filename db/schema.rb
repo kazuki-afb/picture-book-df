@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_26_133455) do
+ActiveRecord::Schema.define(version: 2020_05_02_063749) do
 
   create_table "ability_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2020_04_26_133455) do
     t.bigint "ability_type_id"
     t.string "race"
     t.index ["ability_type_id"], name: "index_items_on_ability_type_id"
+    t.index ["name"], name: "index_items_on_name"
+    t.index ["race"], name: "index_items_on_race"
   end
 
   create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -34,8 +34,6 @@
       - @comments.each do |c|
         .ability__box
           -if c.ability.blank?
-            %li.ability__box--unique
-              = c.ability
           - else
             %li.ability__box--unique
               = c.ability
@@ -48,8 +46,6 @@
       - @comments.each do |c|
         .ability__box
           -if c.consumer.blank?
-            %li.ability__box--unique
-              = c.consumer
           - else
             %li.ability__box--unique
               = c.consumer
@@ -62,8 +58,6 @@
       - @comments.each do |c|
         .ability__box
           -if c.skill.blank?
-            %li.ability__box--unique
-              = c.skill
           - else
             %li.ability__box--unique
               = c.skill
