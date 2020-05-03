@@ -1,12 +1,15 @@
 class ImagesController < ApplicationController
-
+  before_action :set_item # アクション前にset_itemを呼び出す
+  def index
+    # @item = Item.where(params[:id])
+    @images = @item.images.includes(:item)
+  end
   def new
-    @item = Item.find(params[:id])
     @image = Image.new
   end
   def create
     @image = Image.new(image_params)
-    if @iamge.save
+    if @image.save
       session[:item_id] = @image.item_id
       redirect_to item_path(session[:item_id])
     else
@@ -19,8 +22,13 @@ class ImagesController < ApplicationController
   def image_params
     params.require(:image).permit(
       :image
-    ).marge(
-      item_id: params[:id]
+    ).merge(
+      item_id: params[:item_id]
     )
+  end
+
+  def set_item
+    # ネストしてあるのでitem_idを呼び出す必要がある
+    @item = Item.find(params[:item_id])
   end
 end

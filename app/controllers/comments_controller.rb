@@ -1,10 +1,14 @@
 class CommentsController < ApplicationController
   before_action :set_item # アクション前にset_itemを呼び出す
 
+  def index
+    @comments = @item.comments.includes(:item)
+  end
+
   def new
     # インスタンス生成
     @comment = Comment.new
-    
+    # binding.pry
   end
 
   def create
@@ -31,6 +35,7 @@ class CommentsController < ApplicationController
 
   def set_item
     # ネストしてあるのでitem_idを呼び出す必要がある
+    @items = Item.where(params[:id]).order('name').page(params[:page]).per(1)
     @item = Item.find(params[:item_id])
   end
 end

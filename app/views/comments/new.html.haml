@@ -1,30 +1,17 @@
 .wrapper
+  .header2
+    %h1.header2__title PictureBook-df
   .form
     -# routes.rbでネストしているのでmodel:は
     -# @itemと@comment2つ使う
     = form_with model: [@item, @comment], url: item_comments_path, class: 'form__box' do |f|
       .form__box--name
-        = f.label :能力の特徴
-        = f.text_field :ability, placeholder: "250字以内", size: 32, maxlength:"250"
+        = f.label :能力の特徴, class: 'form__box--name--title'
+        = f.text_area :ability, placeholder: "250字以内", size: "32x4", maxlength:"250", class: 'form__box--text'
       .form__box--ability_person
         = f.label :能力者名
         = f.text_field :consumer, placeholder: "例) モンキー・D・ルフィー", size: 32, maxlength:"30"
-      .form__box--ability_person
+      .form__box--skill
         = f.label :必殺技
         = f.text_field :skill, placeholder: "例) ゴムゴムのピストル", size: 32, maxlength:"30"
-      %h3.form__box--titel
-        画像選択
-      -# %p 最大10枚までアップロードできます
-      -# #image-box-1
-      -#   .item-num-0#image-box__container
-      -# .form--select_icon
-      -#   = f.fields_for :images do |i|
-      -#     .input-area
-      -#       = i.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
-      -#       %label{for: "img-file"}
-      -#         %i.fas.fa-camera
-      .form__box--image
-        = f.label :image do
-          = icon('fas', 'image')
-          = f.file_field :image, class: "hidden"
       = f.submit '登録', class: 'form__box--btn'
