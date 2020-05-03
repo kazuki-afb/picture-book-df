@@ -1,3 +1,19 @@
+// $(function(){
+//   // 画像を登録したら.image_arrayに画像が表示される
+//   $('.image__select').on('submit',function(e){
+//     e.preventDefault();
+//     var formData = new FormData(this);
+//     var url = $(this).attr('action');
+//     $.ajax({
+//       url: url,
+//       type: "POST",
+//       data: formData,
+//       dataType: 'json',
+//       processData: false,
+//       cotentType: false
+//     })
+//   })
+// });
 // 実装したい事：image_arrayのboxをクリックしたら.image_mainに画像が表示される。
 $(function(){
   // DOM取得してimagesに変数定義

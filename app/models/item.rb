@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   has_many :images
   belongs_to :ability_type
   def self.search(search)
-    return Item.all.order(name: "DESC") unless search
+    return Item.order('name') unless search
     Item.where('name LIKE(?)', "%#{search}%")
   end
 end

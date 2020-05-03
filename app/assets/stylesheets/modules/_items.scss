@@ -4,11 +4,11 @@
 .wrapper {
   height: 100vh;
   width: 100%;
-  display: flex;
 
   .left_content {
     height: 100%;
     width: 50%;
+    float: left;
     .image {
       height: 100%;
       width: 100%;
@@ -224,6 +224,7 @@
     height: 100%;
     width: 50%;
     border-left: solid 1px black;
+    float: left;
     .header {
       height: 70px;
       width: 100%;
@@ -247,7 +248,7 @@
           padding-left: 10px;
           padding-top: 7px;
         }
-        &__model {
+        &__race {
           padding-left: 10px;
           padding-top: 35px;
           font-size: 16px;
@@ -264,30 +265,33 @@
           padding-top: 16px;
           .write {
             height: 40px;
-            width: 70px;
-            background-color: blue;
+            width: 30px;
             // margin: 0 0 0 auto;
             text-align: center;
             line-height: 40px;
             float: right;
-            margin-right: 15px;
+            margin-right: 20px;
             margin-left: 15px;
-            &__btn {
+            &__icon {
               font-size: 20px;
               color: white;
             }
           }  
           .edit {
             height: 40px;
-            width: 70px;
-            background-color: blue;
+            width: 30px;
             text-align: center;
-            line-height: 40px;
-            font-size: 20px;
-            color: white;
             float: right;
-            // margin-left: 87%;
-            // margin-top: 16px;
+            &__icon {
+              height: 100%;
+              width: 100%;
+              line-height: 40px;
+              font-size: 20px;
+              color: white;
+              float: right;
+              // margin-left: 87%;
+              // margin-top: 16px;
+            }
           }
         }
       }
@@ -377,6 +381,7 @@
       .ability {
         height: 30px;
         width: 100%;
+        display: inline-block;
         &__box {
           display: flex;
           &--unique {

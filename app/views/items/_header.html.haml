@@ -1,0 +1,29 @@
+.header
+  .item
+    -@items.each do |i|
+      %h1.item__name 
+        = i.name
+        %span<>
+        の実
+      - if i.race.blank?
+      - else
+        %p.item__race
+          モデル：
+          %span<>
+          =i.race
+      %p.item__type
+        (
+        %span<>
+        = i.ability_type.name
+        %span<>
+        系)
+    -if user_signed_in?
+      .btn
+        .write
+          .write__btn
+            = link_to new_item_comment_path(@items.ids) do
+              Write
+
+        .edit
+          = link_to edit_user_path(current_user) do
+            Edit

@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
   # before_action :move_to_index except: [:index, :show, :search]
   def index
-    @item = Item.where(params[:id]).order('name').page(params[:page]).per(1)
+    @items = Item.order('name').page(params[:page]).per(1)
     # @item = Item.find(params[:id])
-    @comments = @item.comments.includes(:item)
+    # @comments = @item.comments.includes(:item)
+    # @images = @item.images.includes(:item)
   end
 
   def new
@@ -27,17 +28,20 @@ class ItemsController < ApplicationController
     # item_idカラムのcommentを表示
     @item = Item.find(params[:id])
     @comment = Comment.new
+    @image = Image.new
     @comments = @item.comments.includes(:item)
+    @images = @item.images.includes(:item)
   end
 
   def search
     @items = Item.search(params[:keyword])
+    # binding.pry
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :ability_type_id, :ability_person, :race)
+    params.require(:item).permit(:name, :ability_type_id, :ability_person, :race, item_ids: [])
   end
 
   def move_to_index

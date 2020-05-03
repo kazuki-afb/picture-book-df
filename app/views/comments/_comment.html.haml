@@ -21,12 +21,12 @@
         .btn
           .write
             .write__btn
-              = link_to new_item_comment_path(params[:id]) do
-                = icon('fas', 'pen', class: "write__icon")
+              = link_to new_item_comment_path(params[:item_id]) do
+                Write
 
-          .edit
-            = link_to search_items_path, class: "edit__btn" do
-              = icon('fas', 'search', class: "edit__icon")
+          = label class: 'edit' do
+            = icon('fas, seasrch')
+            = link_to search_items_path class: 'hidden'
   .comments
     .title
       能力の特徴

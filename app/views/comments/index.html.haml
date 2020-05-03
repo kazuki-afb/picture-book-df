@@ -1,2 +1,4 @@
 .wrapper
-  %h1 comments_index
+  = render partial: 'images/image', collection: @images
+  = render partial: 'comment', collection: @comments
+  = paginate(@items)

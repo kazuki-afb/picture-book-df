@@ -1,4 +1,9 @@
 .wrapper
-  = render 'image'
-  = render 'comment'
+  .left_content
+  .right_content
+    = render 'header'
+    = render partial: 'comments/comment', collection: @comments
+    = paginate(@items)
+  -# = render 'image'
+  -# = render 'comment'
 
