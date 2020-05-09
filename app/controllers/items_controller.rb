@@ -35,7 +35,6 @@ class ItemsController < ApplicationController
 
   def search
     @items = Item.search(params[:keyword])
-    # binding.pry
   end
 
   private

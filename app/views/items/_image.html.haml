@@ -15,7 +15,7 @@
           = f.file_field :image, class: "hidden"
         = f.submit 'send', class: "image__select--btn"
     .image__array
-      -@images.each do |i|
+      -@images.order(id: "DESC").each do |i|
         %label.box(for="box")
           =image_tag "#{i.image}", class: 'box__image'
           %input.sub(type="submit")
