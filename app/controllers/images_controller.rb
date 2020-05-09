@@ -15,6 +15,11 @@ class ImagesController < ApplicationController
     else
       render :new
     end
+    # @image = Image.create(image_params)
+    # respond_to do |format|
+    #   format.html {redirect_to item_path(params[:item_id])}
+    #   format.json
+    # end
   end
 
   private

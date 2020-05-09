@@ -3,16 +3,36 @@
     .book
       .book__side
       .book__index
-        .book__index--box_1 あ
-        .book__index--box_2 か
-        .book__index--box_3 さ
-        .book__index--box_4 た
-        .book__index--box_5 な
-        .book__index--box_6 は
-        .book__index--box_7 ま
-        .book__index--box_8 や
-        .book__index--box_9 ら
-        .book__index--box_10 わ
+        -# .book__index--box_1 あ
+        -# .book__index--box_2 か
+        -# .book__index--box_3 さ
+        -# .book__index--box_4 た
+        -# .book__index--box_5 な
+        -# .book__index--box_6 は
+        -# .book__index--box_7 ま
+        -# .book__index--box_8 や
+        -# .book__index--box_9 ら
+        -# .book__index--box_10 わ
+        .book__index--box_1
+          .inner あ
+        .book__index--box_2
+          .inner か
+        .book__index--box_3
+          .inner さ
+        .book__index--box_4
+          .inner た
+        .book__index--box_5
+          .inner な
+        .book__index--box_6
+          .inner は
+        .book__index--box_7
+          .inner ま
+        .book__index--box_8
+          .inner や
+        .book__index--box_9
+          .inner ら
+        .book__index--box_10 
+          .inner わ
       .book__side
   .right_content
     .header
@@ -32,7 +52,7 @@
     =form_with(url: search_items_path, local: true, method: :get, class: 'search_form') do |f|
       = f.text_field :keyword, placeholder: '実の名前を入力', class: 'search_form__input', size: '32', required: true, pattern: '/\A[ァ-ヶー－]+\z/'
       = f.submit '検索', class: 'search_form__btn'
-    -@items.order(:name).each do |i|
+    -@items.order(:name,:race).each do |i|
       .contents
         -if i.race.blank?
           = link_to "#{i.name}の実", "/items/#{i.id}", class: 'content'
