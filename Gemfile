@@ -60,4 +60,4 @@ gem 'mini_magick'
 gem 'kaminari'
 gem 'utf8-cleaner'
 
-ruby "2.5.1"
+ruby "2.5.8"
