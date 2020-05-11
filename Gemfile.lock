@@ -260,5 +260,8 @@ DEPENDENCIES
   utf8-cleaner
   web-console (>= 3.3.0)
 
+RUBY VERSION
+   ruby 2.5.1p57
+
 BUNDLED WITH
    2.0.1
