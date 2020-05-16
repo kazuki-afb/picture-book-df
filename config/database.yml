@@ -49,6 +49,10 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
   database: picture-book-df_production
   username: picture-book-df
   password: <%= ENV['PICTURE-BOOK-DF_DATABASE_PASSWORD'] %>
