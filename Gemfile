@@ -59,5 +59,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'utf8-cleaner'
+gem 'rails_12factor', group: :production
 
 ruby "2.5.8"
