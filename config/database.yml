@@ -53,10 +53,13 @@ production:
   encoding: utf8
   pool: 5
 
-  database: picture-book-df_production
-  username: picture-book-df
-  password: <%= ENV['PICTURE-BOOK-DF_DATABASE_PASSWORD'] %>
+  #database: picture-book-df_production
+  #username: picture-book-df
+  database: heroku_26358a63a29bede
+  # username: b0db7e428bea93
+  # password: <%= ENV['PICTURE-BOOK-DF_DATABASE_PASSWORD'] %>
   # herokuデプロイ用
   url:        <%= ENV['DATABASE_URL'] %>
   username:   <%= ENV['DB_USERNAME'] %>
   password:   <%= ENV['DB_PASSWORD'] %>
+  
