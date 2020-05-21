@@ -17,6 +17,8 @@
         = @item.ability_type.name
         %span<>
         系)
+      %p.item__type
+        = @item.ability_person
       -if user_signed_in?
         .btn
           .write

@@ -1,31 +1,3 @@
-// $(function(){
-//   function buildHTML(image){
-//     let html = `<label class="box" for="box">
-//                   <img class="box__image" src="${image.image}">
-//                   <input class="sub" type="submit">
-//                 </label>`
-//     return html;
-//   }
-//   // 画像を登録したら.image_arrayに画像が表示される
-//   $('.image__select').on('submit',function(e){
-//     e.preventDefault();
-//     var formData = new FormData(this);
-//     var url = $(this).attr('action');
-//     $.ajax({
-//       url: url,
-//       type: "POST",
-//       data: formData,
-//       dataType: 'json',
-//       processData: false,
-//       cotentType: false
-//     })
-//     .done(function(data){
-//       let html = buildHTML(data);
-//       $('.image__array').append(html);
-//       $('.hidden').val('')
-//     })
-//   })
-// });
 // 実装したい事：image_arrayのboxをクリックしたら.image_mainに画像が表示される。
 $(function(){
   // DOM取得してimagesに変数定義
