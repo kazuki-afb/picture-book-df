@@ -445,49 +445,55 @@
       float: left;
       line-height: 40em;
     }
-  
-    .search_form {
+    .search_box {
       width: 100%;
-      margin-top: 80px;
-      margin-bottom: 35px;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      &__input {
-        width: 45%;
-        margin-right: 10px;
-      }
-      &__btn {
-        display       : inline-block;
-        border-radius : 5%;          /* 角丸       */
-        font-size     : 12pt;        /* 文字サイズ */
-        text-align    : center;      /* 文字位置   */
-        cursor        : pointer;     /* カーソル   */
-        padding       : 12px 12px;   /* 余白       */
-        background    : #000066;     /* 背景色     */
-        color         : #ffffff;     /* 文字色     */
-        line-height   : 1em;         /* 1行の高さ  */
-        transition    : .3s;         /* なめらか変化 */
-        box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
-        border        : 2px solid #000066;    /* 枠の指定 */  
-      }
-      &__btn:hover {
-        box-shadow    : none;        /* カーソル時の影消去 */
-        color         : #000066;     /* 背景色     */
-        background    : #ffffff;     /* 文字色     */
+      height: 92px;
+      .search_form {
+        width: 100%;
+        padding-top: 24px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        &__input {
+          width: 45%;
+          margin-right: 10px;
+        }
+        &__btn {
+          display       : inline-block;
+          border-radius : 5%;          /* 角丸       */
+          font-size     : 12pt;        /* 文字サイズ */
+          text-align    : center;      /* 文字位置   */
+          cursor        : pointer;     /* カーソル   */
+          padding       : 12px 12px;   /* 余白       */
+          background    : #000066;     /* 背景色     */
+          color         : #ffffff;     /* 文字色     */
+          line-height   : 1em;         /* 1行の高さ  */
+          transition    : .3s;         /* なめらか変化 */
+          box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+          border        : 2px solid #000066;    /* 枠の指定 */  
+        }
+        &__btn:hover {
+          box-shadow    : none;        /* カーソル時の影消去 */
+          color         : #000066;     /* 背景色     */
+          background    : #ffffff;     /* 文字色     */
+        }
       }
     }
-    .contents {
-      height: 24px;
+    .contents_box {
       width: 100%;
-      margin-top: 5px;
-      .content {
-        padding-left: 23%;
-        font-size: 24px;
-        color: black;
-        text-decoration: none;
+      height: calc(100% - 300px);
+      overflow-y: scroll;
+      .contents {
+        height: 24px;
+        width: 100%;
+        margin-top: 5px;
+        .content {
+          padding-left: 23%;
+          font-size: 24px;
+          color: black;
+          text-decoration: none;
+        }
       }
-      
     }
     // .content {
     //   padding-top: 5px;
@@ -499,7 +505,7 @@
     .new_item {
       height: 70px;
       width: 100%;
-      margin-top: 80px;
+      margin-top: 10px;
       text-align: center;
       line-height: 70px;
       &__btn {

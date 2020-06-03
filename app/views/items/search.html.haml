@@ -48,18 +48,19 @@
             %a.sign__in--link(href= user_session_path) ログイン
           .sign__up
             %a.sign__up--link(href= new_user_registration_path) 新規登録
-
-    =form_with(url: search_items_path, local: true, method: :get, class: 'search_form') do |f|
-      = f.text_field :keyword, placeholder: '実の名前を入力', class: 'search_form__input', size: '32', required: true, pattern: '/\A[ァ-ヶー－]+\z/'
-      = f.submit '検索', class: 'search_form__btn'
-    -@items.order(:name,:race).each do |i|
-      .contents
-        -if i.race.blank?
-          = link_to "#{i.name}の実", "/items/#{i.id}", class: 'content'
-          %br/
-        -else
-          = link_to "#{i.name}の実 (モデル #{i.race})", "/items/#{i.id}", class: 'content'
-          %br/
+    .search_box
+      =form_with(url: search_items_path, local: true, method: :get, class: 'search_form') do |f|
+        = f.text_field :keyword, placeholder: '実の名前を入力', class: 'search_form__input', size: '32', required: true, pattern: '/\A[ァ-ヶー－]+\z/'
+        = f.submit '検索', class: 'search_form__btn'
+    .contents_box
+      -@items.order(:name,:race).each do |i|
+        .contents
+          -if i.race.blank?
+            = link_to "#{i.name}の実", "/items/#{i.id}", class: 'content'
+            %br/
+          -else
+            = link_to "#{i.name}の実 (モデル #{i.race})", "/items/#{i.id}", class: 'content'
+            %br/
     .new_item
       -if user_signed_in?
         .new_item__btn
